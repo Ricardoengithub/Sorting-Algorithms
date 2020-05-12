@@ -16,9 +16,9 @@ def quick(arr, left, right):
                 arr[izq] = arr[der]
                 arr[der] = tmp
                 izq+=1
-                der+=1
+                der-=1
             else:
-                if(arr[izq] >= pivote):
+                if(arr[izq] > pivote):
                     der-=1
                 else:
                     izq+=1
