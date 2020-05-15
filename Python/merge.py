@@ -1,7 +1,6 @@
 import sys
 
 def mergeSort(arr):
-    index = 1
     if(len(arr) == 1):
         return arr
     else:

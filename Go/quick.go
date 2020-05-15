@@ -1,8 +1,6 @@
-package main
+package sorting
 
-import "fmt"
-
-func quickSort(arr []int) []int{
+func QuickSort(arr []int) []int{
 
 	return quick(arr, 0, len(arr) -1)
 }
@@ -36,27 +34,4 @@ func quick(arr []int, left int, right int) []int{
 	 }
 	 
 	return arr
-}
-
-func main()  {
-	x := []int{
-		10,
-		5,
-		9,
-		1,
-		4,
-		3,
-		2,
-		7, 	
-		6,
-		15,
-		11,
-		1,
-		2,
-		3,
-		5,
-		4,
-	}
-
-	fmt.Println(quickSort(x))	
 }

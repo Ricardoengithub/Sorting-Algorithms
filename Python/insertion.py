@@ -1,19 +1,18 @@
 import sys
 
 def insertionSort(arr):
-    index = 1
+    
+    for i in range(1, len(arr)):
+        index = i
 
-    while(index < len(arr)):
-        if(arr[index] < arr[index - 1]):
-            tmp = arr[index - 1]
-            arr[index - 1] = arr[index]
-            arr[index] = tmp
-            if(index == 1):
-                index+=1
-            else:
+        while(index > 0):
+            if(arr[index] < arr[index - 1]):
+                tmp = arr[index - 1]
+                arr[index - 1] = arr[index]
+                arr[index] = tmp
                 index-=1
-        else:
-            index+=1
+            else:
+                break
 
     return arr
 

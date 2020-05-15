@@ -1,8 +1,6 @@
-package main
+package sorting
 
-import "fmt"
-
-func selection(arr []int) []int{
+func SelectionSort(arr []int) []int{
 
 	var minimo int = 0
 	for i:=0; i < len(arr); i++{		
@@ -19,24 +17,4 @@ func selection(arr []int) []int{
 		arr[minimo] = tmp
 	}
 	return arr
-}
-
-func main()  {
-	x := []int{
-		10,
-		5,
-		9,
-		1,
-		4,
-		3,
-		2,
-		7,
-		8,
-		6,
-		100,
-		0,
-		-100,
-	}
-
-	fmt.Println(selection(x))	
 }

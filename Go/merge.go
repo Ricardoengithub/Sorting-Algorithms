@@ -1,15 +1,13 @@
-package main
+package sorting
 
-import "fmt"
-
-func mergeSort(arr []int) []int{
+func MergeSort(arr []int) []int{
 	if len(arr) <= 1{
 		return arr
 	}else{
 		middle := int(len(arr) / 2)
 
-		left := mergeSort(arr[0:middle])
-		right := mergeSort(arr[middle:len(arr)])
+		left := MergeSort(arr[0:middle])
+		right := MergeSort(arr[middle:len(arr)])
 
 		return merge(left, right)
 	}
@@ -45,22 +43,4 @@ func merge(izq []int, der []int) []int{
 	}
  
 	return arr
-}
-
-func main()  {
-	x := []int{
-		10,
-		5,
-		9,
-		1,
-		4,
-		3,
-		2,
-		7,
-		8,
-		6,
-		100,
-	}
-
-	fmt.Println(mergeSort(x))	
 }
