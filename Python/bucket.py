@@ -7,6 +7,22 @@ def getMaximum(arr):
             max = arr[i]
     return max
 
+def insertionSort(arr):
+    
+    for i in range(1, len(arr)):
+        index = i
+
+        while(index > 0):
+            if(arr[index] < arr[index - 1]):
+                tmp = arr[index - 1]
+                arr[index - 1] = arr[index]
+                arr[index] = tmp
+                index-=1
+            else:
+                break
+
+    return arr
+
 def bucketSort(arr):
     bucket = len(arr)
     max = getMaximum(arr)
@@ -25,7 +41,7 @@ def bucketSort(arr):
         if arrAux[i] == None:
             continue
         elif len(arrAux[i]) > 1:
-            x = bucketSort(arrAux[i])
+            x = insertionSort(arrAux[i])
             for j in x:
                 arr.append(j)
         else:

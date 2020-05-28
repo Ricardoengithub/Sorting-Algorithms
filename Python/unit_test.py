@@ -4,6 +4,7 @@ from insertion import insertionSort
 from merge import mergeSort
 from bubble import bubbleSort
 from quick import quickSort
+from counting import countingSort
 
 class SelectionSortTestCaste(unittest.TestCase):
     
@@ -33,12 +34,20 @@ class QuickSortTestCase(unittest.TestCase):
         self.assertEqual(quickSort([61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 61, 67, 71, 73, 79, 83, 89, 97])
         self.assertEqual(quickSort([43,47,53,59,61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
 
-class BubbleSortTestCaste(unittest.TestCase):
+class BubbleSortTestCase(unittest.TestCase):
     
     def test_bubbleSort(self):
         self.assertEqual(bubbleSort([1,2,3,4,5,6,7,8,9,10]), [1,2,3,4,5,6,7,8,9,10])
         self.assertEqual(bubbleSort([61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 61, 67, 71, 73, 79, 83, 89, 97])
         self.assertEqual(bubbleSort([43,47,53,59,61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
+
+
+class CountingSortTestCase(unittest.TestCase):
+
+    def test_countingSort(self):
+        self.assertEqual(countingSort(1, 10, [1,2,3,4,5,6,7,8,9,10]), [1,2,3,4,5,6,7,8,9,10])
+        self.assertEqual(countingSort(2, 97, [61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 61, 67, 71, 73, 79, 83, 89, 97])
+        self.assertEqual(countingSort(2, 97, [43,47,53,59,61,89,97,2,3,5,7,11,13,17,19,23,29,31,37,41,67,71,73,79,83]), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])        
 
 if __name__ == '__main__':
     unittest.main() 
