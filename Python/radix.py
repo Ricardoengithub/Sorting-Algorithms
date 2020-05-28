@@ -10,6 +10,9 @@ def radixSort(k, arr):
                     'F' : 15,
                     }
 
+    for i in range(0, len(arr)):
+        arr[i] = list(arr[i])
+
     for j in range(0,k):
         for i in range(1, len(arr)):
             index = i
@@ -27,11 +30,10 @@ def radixSort(k, arr):
         for x in arr: 
             print("".join(x))
 
-    s = ""
-    for x in arr:
-        s+=  "".join(x)
-        s+=","
-    return s[:len(s)-1]
+    for i in range(0, len(arr)):
+        arr[i] = "".join(arr[i])
+
+    return arr
 
 
 def main():
@@ -39,10 +41,10 @@ def main():
     try:
         f = open("radix.txt",'r')
         text = f.readlines()
-        arr = [list(x) for x in text[1].split(",")]
+        arr = [x for x in text[1].split(",")]
     except:
         text = sys.argv[1]
-        arr = [list(x) for x in text.split(",")]
+        arr = [x for x in text.split(",")]
 
     print("List unsorted: " + str(text[1]))
     arr = radixSort(int(text[0]), arr)  
