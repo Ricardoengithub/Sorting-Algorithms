@@ -7,11 +7,11 @@ func SelectionSort(arr []int) []int{
 		minimo = i
 
 		for j:=i+1; j < len(arr); j++{
-
 			if(arr[j] < arr[minimo]){
 				minimo = j
 			}
 		}
+		
 		var tmp int = arr[i]
 		arr[i] = arr[minimo]
 		arr[minimo] = tmp
