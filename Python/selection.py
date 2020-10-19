@@ -2,13 +2,13 @@ import sys
 
 def selectionSort(arr):
     for i in range(0, len(arr)):
-        index = i
+        min = i
         for j in range(i+1, len(arr)):
-            if(arr[j] < arr[index]):
-                index = j
+            if(arr[j] < arr[min]):
+                min = j
         tmp = arr[i]
-        arr[i] = arr[index]
-        arr[index] = tmp
+        arr[i] = arr[min]
+        arr[min] = tmp
     return arr
 
 
